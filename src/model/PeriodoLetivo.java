@@ -1,59 +1,71 @@
 package model;
-import java.time.LocalDate;
+
 import java.time.LocalDateTime;
-public class VidaAcademica {
+
+public class PeriodoLetivo {
     private int id;
-    private int alunoId;
     private String tipo;
     private String descricao;
+    private LocalDateTime dataInicio;
+    private LocalDateTime dataFim;
     private LocalDateTime dataCriacao;
     private LocalDateTime dataModificacao;
+    
 
-    public int getAlunoId() {
-        return alunoId;
-    }
-
-    public void setAlunoId(int alunoId) {
-        this.alunoId = alunoId;
-    }
-
+    // Getters e Setters
     public int getId() {
-        return id; 
+        return id;
     }
+
     public void setId(int id) {
-        this.id = id; 
+        this.id = id;
     }
+
     public String getTipo() {
         return tipo;
     }
+
     public void setTipo(String tipo) {
         this.tipo = tipo;
     }
+
     public String getDescricao() {
         return descricao;
     }
+
     public void setDescricao(String descricao) {
         this.descricao = descricao;
     }
+
+    public LocalDateTime getDataInicio() {
+        return dataInicio;
+    }
+
+    public void setDataInicio(LocalDateTime dataInicio) {
+        this.dataInicio = dataInicio;
+    }
+
+    public LocalDateTime getDataFim() {
+        return dataFim;
+    }
+
+    public void setDataFim(LocalDateTime dataFim) {
+        this.dataFim = dataFim;
+    }
+
     public LocalDateTime getDataCriacao() {
         return dataCriacao;
     }
+
     public void setDataCriacao(LocalDateTime dataCriacao) {
         this.dataCriacao = dataCriacao;
     }
+
     public LocalDateTime getDataModificacao() {
         return dataModificacao;
     }
+
     public void setDataModificacao(LocalDateTime dataModificacao) {
-        this.dataModificacao = dataModificacao; 
-    }
-    private LocalDate dataEvento;
-
-    public LocalDate getDataEvento() {
-        return dataEvento;
-    }
-
-    public void setDataEvento(LocalDate dataEvento) {
-        this.dataEvento = dataEvento;
+        this.dataModificacao = dataModificacao;
     }
 }

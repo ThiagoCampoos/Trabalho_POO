@@ -1,16 +1,20 @@
 package model;
+
 import java.time.LocalDateTime;
+
 public class Curso {
     private int id;
     private String nome;
     private String sigla;
-    private String tipo;
+    private String tipo; 
     private LocalDateTime dataCriacao;
     private LocalDateTime dataModificacao;
 
+    // Getters e Setters
     public int getId() {
-        return id; 
+        return id;
     }
+
     public void setId(int id) {
         this.id = id;
     }
@@ -18,6 +22,7 @@ public class Curso {
     public String getNome() {
         return nome;
     }
+
     public void setNome(String nome) {
         this.nome = nome;
     }
@@ -25,6 +30,7 @@ public class Curso {
     public String getSigla() {
         return sigla;
     }
+
     public void setSigla(String sigla) {
         this.sigla = sigla;
     }
@@ -32,6 +38,7 @@ public class Curso {
     public String getTipo() {
         return tipo;
     }
+
     public void setTipo(String tipo) {
         this.tipo = tipo;
     }
@@ -39,6 +46,7 @@ public class Curso {
     public LocalDateTime getDataCriacao() {
         return dataCriacao;
     }
+
     public void setDataCriacao(LocalDateTime dataCriacao) {
         this.dataCriacao = dataCriacao;
     }
@@ -46,8 +54,8 @@ public class Curso {
     public LocalDateTime getDataModificacao() {
         return dataModificacao;
     }
+
     public void setDataModificacao(LocalDateTime dataModificacao) {
-        this.dataModificacao = dataModificacao; 
+        this.dataModificacao = dataModificacao;
     }
-    
 }

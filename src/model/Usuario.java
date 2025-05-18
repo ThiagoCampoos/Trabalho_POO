@@ -4,11 +4,14 @@ import java.time.LocalDateTime;
 public class Usuario {
     private int id;
     private Pessoa pessoa;
+    private int escolaId;
     private Escola escola;
     private String tipo;
     private LocalDateTime dataCriacao;
     private LocalDateTime dataModificacao;
-
+    // Novo campo e métodos de acesso
+    private int pessoaId;
+    
     public int getId() {
         return id; 
     }
@@ -23,6 +26,13 @@ public class Usuario {
         this.pessoa = pessoa;
     }
 
+    public int getEscolaId() {
+        return escolaId;
+    }
+    public void setEscolaId(int escolaId) {
+        this.escolaId = escolaId;
+    }
+    
     public Escola getEscola() {
         return escola;
     }
@@ -51,4 +61,11 @@ public class Usuario {
         this.dataModificacao = dataModificacao;
     }
     
+    public int getPessoaId() {
+        return pessoaId;
+    }
+
+    public void setPessoaId(int pessoaId) {
+        this.pessoaId = pessoaId;
+    }
 }

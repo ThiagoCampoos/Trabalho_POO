@@ -1,6 +1,7 @@
 package model;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.Objects;
 
 public class Aluno {
     private int id;
@@ -11,6 +12,21 @@ public class Aluno {
     private String email;
     private LocalDateTime dataCriacao;
     private LocalDateTime dataModificacao;
+
+    public Aluno() {
+        this.dataCriacao = LocalDateTime.now();
+        this.dataModificacao = LocalDateTime.now();
+    }
+
+    public Aluno(String cpf, String nome, LocalDate nascimento, String telefone, String email) {
+        this.cpf = cpf;
+        this.nome = nome;
+        this.nascimento = nascimento;
+        this.telefone = telefone;
+        this.email = email;
+        this.dataCriacao = LocalDateTime.now();
+        this.dataModificacao = LocalDateTime.now();    
+    }
 
     public int getId() {
         return id;
@@ -76,5 +92,17 @@ public class Aluno {
     public void setDataModificacao(LocalDateTime dataModificacao) {
       this.dataModificacao = dataModificacao;  
     }
-    
+    @Override
+    public int hashCode() {
+        int hash = 3;
+        hash = 79 * hash + this.id;
+        hash = 79 * hash + Objects.hashCode(this.cpf);
+        hash = 79 * hash + Objects.hashCode(this.nome);
+        hash = 79 * hash + Objects.hashCode(this.nascimento);
+        hash = 79 * hash + Objects.hashCode(this.telefone);
+        hash = 79 * hash + Objects.hashCode(this.email);
+        hash = 79 * hash + Objects.hashCode(this.dataCriacao);
+        hash = 79 * hash + Objects.hashCode(this.dataModificacao);   
+        return hash;
+    }
 }

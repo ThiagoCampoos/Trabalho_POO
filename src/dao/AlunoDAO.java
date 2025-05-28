@@ -1,14 +1,24 @@
 package dao;
 import model.Aluno;
 import java.time.LocalDateTime;
+
+
 public class AlunoDAO {
+    private Aluno[] alunos = new Aluno[1000];
+    public AlunoDAO() {
+        criar(new Aluno("15561656798", "João Silva", java.time.LocalDate.of(2000, 1, 15), "(11) 99999-0008", "jao.silva@email.com"));
+        criar(new Aluno("12345678901", "Maria Souza", java.time.LocalDate.of(2001, 2, 20), "(11) 99999-0009", "marina.souza@email.com"));
+        criar(new Aluno("12345678902", "Pedro Oliveira", java.time.LocalDate.of(2002, 3, 25), "(11) 99999-0010", "pedro.oliveira@email.com"));
+        criar(new Aluno("12345678903", "Lucia Santos", java.time.LocalDate.of(2023, 4, 30), "(11) 99999-0011", "lucia.santos@email.com"));
+        criar(new Aluno("12345678904", "Ricardo Lima", java.time.LocalDate.of(2004, 5, 5), "(11) 99999-0012", "ricardo.lima@email.com"));
+
+    }
     public Aluno buscarPorPosicao(int index) {
         if (index >= 0 && index < contador) {
             return alunos[index];
         }
         return null;
     }
-    private Aluno[] alunos = new Aluno[1000];
     private int contador = 0;
     public int getContador() {
         return contador;

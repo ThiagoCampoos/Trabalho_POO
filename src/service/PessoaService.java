@@ -10,7 +10,7 @@ public class PessoaService {
     private static PessoaDAO pessoaDAO = new PessoaDAO();
 
     public static void criarPessoa(){
-        Pessoa pessoa = new Pessoa();
+        Pessoa pessoa = new Pessoa(null, null, null, null, null, null);
         pessoa.setNome(JOptionPane.showInputDialog("Nome completo:"));
         pessoa.setNascimento(LocalDate.parse(JOptionPane.showInputDialog("Data nascimento (AAAA-MM-DD):")));
         pessoa.setTelefone(JOptionPane.showInputDialog("Telefone:"));

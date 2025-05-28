@@ -7,6 +7,13 @@ public class CursoDAO {
     private Curso[] cursos = new Curso[100];
     private int contador = 0;
 
+    public CursoDAO() {
+        criar(new Curso("Informatica Basica", "INF", "Tecnologia"));
+        criar(new Curso("Excel e PowerBI", "EPB", "Tecnologia"));
+        criar(new Curso("Admistração", "ADM", "Exatas"));
+        criar(new Curso("Eletrica Industrial", "EI", "Tecnologia"));
+    }
+
     public void criar(Curso curso) {
         curso.setId(contador + 1);
         curso.setDataCriacao(LocalDateTime.now());

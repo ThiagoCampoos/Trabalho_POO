@@ -22,7 +22,7 @@ public class RegistroProfessorDescricaoService {
                 return;
             }
 
-            RegistroProfessorDescricao descricao = new RegistroProfessorDescricao();
+            RegistroProfessorDescricao descricao = new RegistroProfessorDescricao(registro, null, idRegistroStr);
             descricao.setRegistro(registro); // Associa a descrição ao registro pai
             descricao.setObservacao(JOptionPane.showInputDialog("Digite a descrição:"));
 

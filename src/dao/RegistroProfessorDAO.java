@@ -7,6 +7,11 @@ public class RegistroProfessorDAO {
     private RegistroProfessor[] registros = new RegistroProfessor[100];
     private int contador = 0;
 
+    public RegistroProfessorDAO() {
+        criar(new RegistroProfessor(1, "Professor 1", "Matemática", "Turma A"));
+        criar(new RegistroProfessor(2, "Professor 2", "História", "Turma B"));
+    }
+
     public void criar(RegistroProfessor registro) {
         registro.setId(contador + 1);
         registro.setDataCriacao(LocalDateTime.now());

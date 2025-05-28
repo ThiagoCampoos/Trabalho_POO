@@ -8,7 +8,7 @@ public class CursoService {
     private static CursoDAO cursoDAO = new CursoDAO();
 
     public static void criarCurso() {
-        Curso curso = new Curso();
+        Curso curso = new Curso(null, null, null);
         curso.setNome(JOptionPane.showInputDialog("Nome do Curso:"));
         curso.setSigla(JOptionPane.showInputDialog("Sigla do Curso:"));
         curso.setTipo(JOptionPane.showInputDialog("Tipo do Curso (superior/integrado/concomitante):"));

@@ -6,6 +6,10 @@ public class TurmaDAO {
     private Turma[] turmas = new Turma[100];
     private int contador = 0;
 
+    public TurmaDAO() {
+        
+    }
+
     public void criar(Turma turma) {
         turma.setId(contador + 1);
         turma.setDataCriacao(LocalDateTime.now());

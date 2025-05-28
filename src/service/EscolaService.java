@@ -9,7 +9,7 @@ public class EscolaService {
     private static EscolaDAO escolaDAO = new EscolaDAO();
 
     public static void criarEscola() {
-        Escola escola = new Escola();
+        Escola escola = new Escola(null, null, null);
         escola.setNome(JOptionPane.showInputDialog("Nome da escola:"));
         escola.setCidade(JOptionPane.showInputDialog("Cidade:"));
         escola.setTelefone(JOptionPane.showInputDialog("Telefone:"));

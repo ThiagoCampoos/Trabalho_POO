@@ -2,17 +2,32 @@ package model;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.Objects;
 
 public class Pessoa {
     private int id;
+    private static int serial = 0;
     private String nome;
-    private LocalDate nascimento;
+    protected static LocalDate nascimento;
     private String telefone;
     private String login;
     private String senha;
     private LocalDateTime dataCriacao;
-    private LocalDateTime dataModificacao;
+    protected LocalDateTime dataModificacao;
     private String tipo; 
+
+    public Pessoa(String nome, LocalDate nascimento, String telefone, String login, String senha, String tipo) {
+        this.id = ++Pessoa.serial;
+        this.nome = nome;
+        this.nascimento = nascimento;
+        this.telefone = telefone;
+        this.login = login;
+        this.senha = senha;
+        this.tipo = tipo;   
+        this.dataCriacao = LocalDateTime.now();
+        this.dataModificacao = LocalDateTime.now();
+    }
+
 
     public int getId() {
         return id; 
@@ -81,6 +96,33 @@ public class Pessoa {
 
     public void setTipo(String tipo) {
         this.tipo = tipo;
+    }
+
+    @Override
+    public String toString() {
+        return "Pessoa [id=" + id + ", nome=" + nome + ", nascimento=" + nascimento + ", telefone=" + telefone
+                + ", login=" + login + ", senha=" + senha + ", dataCriacao=" + dataCriacao + ", dataModificacao="
+                + dataModificacao + ", tipo=" + tipo + "]";
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id + login + senha + tipo + dataCriacao + dataModificacao + nome + nascimento + telefone);
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+        if (getClass() != obj.getClass())
+            return false;
+        Pessoa other = (Pessoa) obj;
+        return Objects.equals(id, other.id) && Objects.equals(login, other.login)
+                && Objects.equals(senha, other.senha) && Objects.equals(tipo, other.tipo)
+                && Objects.equals(dataCriacao, other.dataCriacao)
+                && Objects.equals(dataModificacao, other.dataModificacao) && Objects.equals(nome, other.nome);
     }
 }
 

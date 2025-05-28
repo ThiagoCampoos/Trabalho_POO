@@ -7,6 +7,24 @@ public class EscolaDAO {
     private Escola[] escolas = new Escola[1000];
     private int contador = 0;
 
+    public EscolaDAO() {
+        criar(new Escola("Escola Estadual Nossa Senhora Do Carmo", "Betim", "31302598781"));
+        criar(new Escola("Escola Estadual Amelia Santana Barbosa", "betim", "31302598782"));
+
+    }
+
+    public void inserirEscola(Escola escola) {
+        for(int i = 0; i < escolas.length; i++) {
+            if(escolas[i] == null) {
+                escola.setId(i + 1);
+                escola.setDataCriacao(LocalDateTime.now());
+                escola.setDataModificacao(LocalDateTime.now());
+                escolas[i] = escola;
+                break;
+            }
+        }
+    } 
+
     public void criar(Escola escola) {
         escola.setId(contador + 1);
         escola.setDataCriacao(LocalDateTime.now());

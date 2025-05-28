@@ -43,7 +43,7 @@ public class AlunoTurmaService {
         try {
             int idAluno = Integer.parseInt(JOptionPane.showInputDialog("ID do Aluno:"));
             int idTurma = Integer.parseInt(JOptionPane.showInputDialog("ID da Turma:"));
-            AlunoTurma vinculo = new AlunoTurma();
+            AlunoTurma vinculo = new AlunoTurma(null, null);
             alunoTurmaDAO.criar(vinculo);
             JOptionPane.showMessageDialog(null, "Aluno vinculado à turma com sucesso!");
         } catch (NumberFormatException e) {

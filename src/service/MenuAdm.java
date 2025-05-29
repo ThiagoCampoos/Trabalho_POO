@@ -9,8 +9,7 @@ import model.Pessoa;
 import model.Turma;
 
 public class MenuAdm {
-    public static void exibirMenu(){
-        // Novo código de autenticação
+    public static void exibirMenu() {
         if(!LoginService.fazerLogin()) {
             JOptionPane.showMessageDialog(null, "Acesso negado!");
             return;

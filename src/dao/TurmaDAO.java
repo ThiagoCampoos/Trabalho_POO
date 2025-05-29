@@ -7,7 +7,9 @@ public class TurmaDAO {
     private int contador = 0;
 
     public TurmaDAO() {
-        
+        criar(new Turma(contador, "Turma A", null, null, "1", null));
+        criar(new Turma(contador, "Turma B", null, null, "1", null));
+        criar(new Turma(contador, "Turma C", null, null, "1", null));
     }
 
     public void criar(Turma turma) {

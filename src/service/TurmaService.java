@@ -6,7 +6,7 @@ public class TurmaService {
     private static TurmaDAO turmaDAO = new TurmaDAO();
 
     public static void criarTurma(){
-        Turma turma = new Turma();
+        Turma turma = new Turma(0, null, null, null, null, null);
         String nome = JOptionPane.showInputDialog("Nome da Turma:");
         if (nome == null || nome.trim().isEmpty()) {
             JOptionPane.showMessageDialog(null, "Nome da turma não pode ser vazio ou cancelado.");
@@ -25,13 +25,17 @@ public class TurmaService {
     }
     
     public static void listarTurmas() {
-        StringBuilder sb = new StringBuilder("Lista de Turmas:\n\n");
-        
-        for (Turma t : turmaDAO.listarTodos()) {
-            sb.append(String.format("ID: %d | Nome: %s | Período: %s | Status: %s%n", 
-                t.getId(), t.getNome(), t.getPeriodo(), t.getStatus()));
+        Turma[] turmas = turmaDAO.listarTodos();
+        if (turmas.length == 0) {
+            JOptionPane.showMessageDialog(null, "Nenhuma turma encontrada.");
+            return;
         }
-        
+
+        StringBuilder sb = new StringBuilder("Turmas:\n");
+        for (Turma turma : turmas) {
+            sb.append(String.format("ID: %d, Nome: %s, Período: %s, Status: %s\n",
+                turma.getId(), turma.getNome(), turma.getPeriodo(), turma.getStatus()));
+        }
         JOptionPane.showMessageDialog(null, sb.toString());
     }
     

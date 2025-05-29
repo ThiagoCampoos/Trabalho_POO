@@ -6,7 +6,10 @@ public class App {
     public static void main(String[] args) throws Exception {
         // Tela de boas-vindas
         JOptionPane.showMessageDialog(null, "Bem-vindo Eduardo, deus nos ajude (amem)!" );
-        MenuAdm.exibirMenu();
+
+        // Exibir menu de opções
+        MenuAdm menu = new MenuAdm();
+        menu.exibirMenu();
     }
 }
 /*
